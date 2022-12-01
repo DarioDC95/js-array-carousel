@@ -24,10 +24,13 @@ itemsSlider.innerHTML += itemsContent;
 
 //const items = document.querySelector('.item'); //ALTERNATIVA
 
+const img_side = document.getElementsByClassName('cover');
 const items = document.getElementsByClassName('item');
 let itemActive = 0;
 
 items[itemActive].classList.add('active');
+img_side[itemActive].classList.add('borderlined');
+img_side[itemActive].classList.remove('overlay');
 
 //rendo attivo anche il primo cerchio di navigazione
 
@@ -42,6 +45,7 @@ next.addEventListener('click', function(){
     //verifico l'elemento attivo (itemActive)
     const lastActiveItem = items[itemActive];
     const lastCircleActive = circles[itemActive];
+    const lastImg_side = img_side[itemActive];
     
     //incremento il suo valore di 1
     if (itemActive == (items.length - 1)) {
@@ -53,10 +57,17 @@ next.addEventListener('click', function(){
     
     const activeItem = items[itemActive];
     const circleActive = circles[itemActive];
+    const activeImg_side = img_side[itemActive];
 
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     lastActiveItem.classList.remove('active');
     activeItem.classList.add('active');
+
+    // aggiungo e rimuovo l'overlay e il borderlined
+    lastImg_side.classList.remove('borderlined');
+    lastImg_side.classList.add('overlay');
+    activeImg_side.classList.add('borderlined');
+    activeImg_side.classList.remove('overlay');
 
     //stessa cosa per i cerchi
     lastCircleActive.classList.remove('active');
@@ -67,6 +78,7 @@ prev.addEventListener('click', function(){
     //verifico l'elemento attivo (itemActive)
     const lastActiveItem = items[itemActive];
     const lastCircleActive = circles[itemActive];
+    const lastImg_side = img_side[itemActive];
 
     //decremento il suo valore di 1
     if (itemActive == 0) {
@@ -78,9 +90,17 @@ prev.addEventListener('click', function(){
 
     const activeItem = items[itemActive];
     const circleActive = circles[itemActive];
+    const activeImg_side = img_side[itemActive];
+    
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     lastActiveItem.classList.remove('active');
     activeItem.classList.add('active');
+
+    // aggiungo e rimuovo l'overlay e il borderlined
+    lastImg_side.classList.remove('borderlined');
+    lastImg_side.classList.add('overlay');
+    activeImg_side.classList.add('borderlined');
+    activeImg_side.classList.remove('overlay');
 
     //stessa cosa per i cerchi
     lastCircleActive.classList.remove('active');
