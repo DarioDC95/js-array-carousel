@@ -59,8 +59,8 @@ next.addEventListener('click', function(){
     activeItem.classList.add('active');
 
     //stessa cosa per i cerchi
-    lastActiveItem.classList.remove('active');
-    activeItem.classList.add('active');
+    lastCircleActive.classList.remove('active');
+    circleActive.classList.add('active');
 });
 
 prev.addEventListener('click', function(){
@@ -70,7 +70,7 @@ prev.addEventListener('click', function(){
 
     //decremento il suo valore di 1
     if (itemActive == 0) {
-        itemActive = 4;
+        itemActive = (items.length - 1);
     }
     else {
         itemActive--;
@@ -83,8 +83,8 @@ prev.addEventListener('click', function(){
     activeItem.classList.add('active');
 
     //stessa cosa per i cerchi
-    lastActiveItem.classList.remove('active');
-    activeItem.classList.add('active');
+    lastCircleActive.classList.remove('active');
+    circleActive.classList.add('active');
 })
 
 
