@@ -16,6 +16,16 @@ for(let i = 0; i < imagesArray.length; i++){
     </div>`
 }
 
+//inseriamo le immagini nel thumbnails
+const thumbnail = document.querySelector('.slide-img');
+
+for(i = 0; i < imagesArray.length; i++) {
+    thumbnail.innerHTML += `<div class="container-img">
+                                <img src="./img/${imagesArray[i]}" alt="">
+                                <div class="cover overlay"></div>
+                            </div>`
+}
+
 //inseriamo le immagini nel div che le deve contenere
 const itemsSlider = document.querySelector('.item-slider');
 itemsSlider.innerHTML += itemsContent;
